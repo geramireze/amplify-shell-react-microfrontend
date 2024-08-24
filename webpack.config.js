@@ -42,6 +42,7 @@ module.exports = {
       name: "shell",
       remotes: {
         microApp1: `microApp1@${process.env.REACT_APP_MICROAPP_1_URL}/remoteEntry.js`,
+        microApp2: `microApp2@${process.env.REACT_APP_MICROAPP_2_URL}/remoteEntry.js`,
       },
       filename: "remoteEntry.js",
       shared: {

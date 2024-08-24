@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react';
 
 const MicroApp = React.lazy(() => import('microApp1/MicroApp'));
+const MicroApp2 = React.lazy(() => import('microApp2/MicroApp'));
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         </a>
       </header>
       <MicroApp />
+      <MicroApp2 />
     </div>
   );
 }
