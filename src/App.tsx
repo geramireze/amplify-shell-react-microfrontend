@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import { Button } from "flowbite-react";
-import { Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
+import React from 'react';
 
+const MicroApp = React.lazy(() => import('microApp1/MicroApp'));
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <MicroApp />
     </div>
   );
 }

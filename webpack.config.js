@@ -1,6 +1,9 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const dotenv = require("dotenv-webpack");
+require('dotenv').config({ path: './.env' }); 
+
+console.log('MicroApp1 URL:', process.env.REACT_APP_MICROAPP_1_URL);
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -37,6 +40,9 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "shell",
+      remotes: {
+        microApp1: `microApp1@${process.env.REACT_APP_MICROAPP_1_URL}/remoteEntry.js`,
+      },
       filename: "remoteEntry.js",
       shared: {
         react: {
